@@ -5,80 +5,143 @@
   <title>Vanila JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="#" type="image/x-icon">
+  <script src="./index.js"></script>
 </head>
 <body>
+<h1>Vanila JS Drum Kit</h1>
   <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
+    <div data-key="86" class="key">
+      <kbd>V</kbd>
+    </div>
+    <div data-key="66" class="key">
+      <kbd>B</kbd>
+    </div>
+    <div data-key="78" class="key">
+      <kbd>N</kbd>
     </div>
     <div data-key="83" class="key">
       <kbd>S</kbd>
-      <span class="sound">hihat</span>
     </div>
     <div data-key="68" class="key">
       <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
     </div>
     <div data-key="71" class="key">
       <kbd>G</kbd>
-      <span class="sound">boom</span>
     </div>
     <div data-key="72" class="key">
       <kbd>H</kbd>
-      <span class="sound">ride</span>
     </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
+    <div data-key="85" class="key">
+      <kbd>U</kbd>
     </div>
-    <div data-key="75" class="key">
+    <div data-key="82" class="key">
+      <kbd>R</kbd>
+    </div>
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+    </div>
+    <div data-key="81" class="key">
+      <kbd>Q</kbd>
+    </div>
+    <div data-key="90" class="key">
+      <kbd>Z</kbd>
+    </div>
+    
+    <!-- <div data-key="70" class="key">
+      <kbd>S</kbd>
+    </div> -->
+    
+    <!-- <div data-key="75" class="key">
       <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
-    </div>
+    </div> -->
   </div>
 
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
-<script>
-  addEventListener('keydown', playSound);
-  addEventListener('keyup', removeStyles);
+   <div class="drum-kit-wrapper">
+    <div class="drum-kit">
+      
+      <img class="drum-kit-img" src="https://www.yamaha.com/en/musical_instrument_guide/common/images/drums/parts_viewer01.jpg" alt="Yamaha Drum Kit" >
+    </div>
+    <div class="key-mapings">
+    <h2 class="title">Key Mapings</h2>
+    <hr/>
+    <h3 class="subtitle">Drum Kit Sounds</h3>
+    <div class="key">
+      <kbd>V</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div class="key">
+      <kbd>B</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div class="key">
+      <kbd>N</kbd>
+      <span class="sound">floor tom</span>
+    </div>
+    <div class="key">
+      <kbd>S</kbd>
+      <span class="sound">close hat</span>
+    </div>
+    <div class="key">
+      <kbd>D</kbd>
+      <span class="sound">open hat</span>
+    </div>
+    <div class="key">
+      <kbd>G</kbd>
+      <span class="sound">high tom</span>
+    </div>
+    <div class="key">
+      <kbd>H</kbd>
+      <span class="sound">mid tom</span>
+    </div>
+    <div class="key">
+      <kbd>R</kbd>
+      <span class="sound">crash</span>
+    </div>
+    <div class="key">
+      <kbd>U</kbd>
+      <span class="sound">ride</span>
+    </div>
+    
+    <h3 class="subtitle">Miscellaneous Sounds</h3>
+    <div class="key">
+      <kbd>Q</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div class="key">
+      <kbd>A</kbd>
+      <span class="sound">tink</span>
+    </div>
+    <div class="key">
+      <kbd>Z</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <!-- <div class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div> -->
+    <!-- <div class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div> -->
+  </div>
+  </div>
 
-  function playSound (e) {
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"`);
-    const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
-    if (!key) {
-      console.error('Invalid Input! Try Again...');
-      return ;
-    }
-    audio.currentTime = 0;
-    audio.play();
-    key.classList.add('playing');
-  };
+  <audio data-key="86" src="sounds/snare.wav"></audio> <!-- V --> 
+  <audio data-key="66" src="sounds/kick.wav"></audio> <!-- B -->
+  <audio data-key="78" src="sounds/floortom.wav"></audio> <!-- N -->
+  <audio data-key="83" src="sounds/closehat.wav"></audio> <!-- S -->
+  <audio data-key="68" src="sounds/openhat.wav"></audio> <!-- D -->
+  <audio data-key="71" src="sounds/hightom.wav"></audio> <!-- G -->
+  <audio data-key="72" src="sounds/midtom.wav"></audio> <!-- H -->
+  <audio data-key="82" src="sounds/crash.wav"></audio> <!-- R -->
+  <audio data-key="85" src="sounds/ride.wav"></audio> <!-- U -->
   
-  function removeStyles (e) {
-    const key = document.querySelector(`div[data-key="${e.keyCode}"`);
-    if (!key) return ;
-    key.classList.remove('playing');
-  }
-
-</script>
-
+  <audio data-key="81" src="sounds/clap.wav"></audio> <!-- Q -->
+  <audio data-key="65" src="sounds/tink.wav"></audio> <!-- A -->
+  <audio data-key="90" src="sounds/boom.wav"></audio> <!-- Z -->
+  
+  <!-- <audio data-key="83" src="sounds/hihat.wav"></audio> -->
+  <!-- <audio data-key="75" src="sounds/tom.wav"></audio> -->
 
 </body>
 </html>

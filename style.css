@@ -1,7 +1,5 @@
 html {
     font-size: 10px;
-    background: url('./drum-kit.jpg') bottom center;
-    background-size: cover;
   }
   
   body,html {
@@ -10,43 +8,163 @@ html {
     font-family: sans-serif;
   }
   
-  .keys {
+  h1 {
+    font-size: 4rem;
+    font-family: 'Tahoma', sans-serif;
+    color: #2c3968;
+    margin: 5rem 0;
+    position: absolute;
+    left: 33%;
+  }
+
+  .drum-kit-wrapper {
+    height: 100vh;
     display: flex;
-    flex: 1;
-    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .drum-kit{
+    min-width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .drum-kit-img {
+    width: 800px;
+    height: 500px;
+    position: relative;
+  }
+
+  .keys{
+    z-index: 9;
+    position: absolute;
+  }
+
+  
+  div[data-key='86'] {
+    top: 430px;
+    left: 610px;
+    position: relative;
+  }
+
+  div[data-key='66'] {
+    top: 450px;
+    left: 770px;
+    position: relative;
+  }
+  
+  div[data-key='78'] {
+    top: 380px;
+    left: 950px;
+    position: relative;
+  }
+
+  div[data-key='83'] {
+    top: 150px;
+    left: 450px;
+    position: relative;
+  }
+  
+  div[data-key='68'] {
+    top: 90px;
+    left: 530px;
+    position: relative;
+  }
+
+  div[data-key='71'] {
+    top: 70px;
+    left: 690px;
+    position: relative;
+  }
+
+  div[data-key='72'] {
+    top: 370px;
+    left: 850px;
+    position: absolute;
+  }
+
+  div[data-key='82'] {
+    top: -200px;
+    left: 580px;
+    position: relative;
+  }
+
+
+  div[data-key='85'] {
+    top: -100px;
+    left: 1000px;
+    position: relative;
+  }
+
+
+
+
+  .key-mapings {
+    background: rgba(0, 0, 0);
+    width: 12vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
   .key {
-    border: .4rem solid black;
-    border-radius: .5rem;
-    margin: 1rem;
-    font-size: 1.5rem;
-    padding: 1rem .5rem;
+    margin: .25rem;
+    font-size: .2rem;
+    padding: .25rem .1rem;
     transition: all .07s ease;
-    width: 10rem;
     text-align: center;
-    color: white;
-    background: rgba(0,0,0,0.4);
-    text-shadow: 0 0 .5rem black;
+    display: flex;
+    gap: .5rem;
+    width: 5rem;
   }
   
+  .key-mapings .key {
+    width: 15rem;
+  }
+
   .playing {
     transform: scale(1.1);
-    border-color: #daf7a6;
-    box-shadow: 0 0 1rem #daf7a6;
   }
   
   kbd {
     display: block;
-    font-size: 4rem;
+    padding: 1rem .1rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    width: 4rem;
     cursor: pointer;
+    border: .4rem solid black;
+    background: white;
+    color: black;
   }
   
   .sound {
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    color: #daf7a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .title{
+    color: white;
+    font-size: 2rem;
+  }
+
+  .subtitle{
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  hr {
+    color: white;
+    width: 100%;
   }
